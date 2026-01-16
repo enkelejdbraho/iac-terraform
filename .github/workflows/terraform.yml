@@ -84,5 +84,5 @@ jobs:
           kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/aws/deploy.yaml
 
       - name: destroy infrastructure
-        if: github.ref == 'refs/heads/main' && github.event_name == 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform destroy --auto-approve
